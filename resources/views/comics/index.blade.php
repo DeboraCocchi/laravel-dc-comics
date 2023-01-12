@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container text-center">
 <div class="row justify-content-between">
     @forelse ($comics as $comic)
     <div class="card dc-cards">
@@ -25,9 +25,9 @@
       <h5>Nessuna risorsa trovata</h5>
     @endforelse
 
-    <button class="btn-primary btn w-40 my-5 add-comic">Aggiungi fumetto</button>
-</div>
 
+</div>
+<a class="btn-primary btn w-40 my-5 add-comic" href="{{route('comics.create')}}">Aggiungi fumetto <i class="bi bi-plus-circle"></i></a>
 </div>
 
 

@@ -29,7 +29,7 @@ class ComicRequest extends FormRequest
            'price'=>'required',
            'series'=>'required|min:3|max:255',
            'type'=>'required|min:3|max:255',
-           'sale_date'=>'required|date_format:Y/m/d'
+           'sale_date'=>'required|date_format:Y-m-d'
         ];
     }
 
@@ -48,7 +48,7 @@ class ComicRequest extends FormRequest
         'type.min'=>'Il tipo deve contenere almeno 3 caratteri',
         'type.max'=>'Il tipo può contenere al massimo 255 caratteri',
         'sale_date.required'=>'La data è obbligatoria',
-        'sale_date.date_format:Y/m/d'=>'La data deve essere indicata nel formato AAAA/MM/GG'
+        'sale_date.date_format:Y-m-d'=>'La data deve essere indicata nel formato AAAA-MM-GG'
         ];
 
     }

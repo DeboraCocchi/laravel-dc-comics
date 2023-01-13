@@ -7,6 +7,11 @@
 @section('content')
 
 <div class="container text-center">
+    @if(session('deleted'))
+    <div class="alert alert-primary my-4" role="alert">
+        Elemento eliminato correttamente
+      </div>
+    @endif
 <div class="row justify-content-between">
     @forelse ($comics as $comic)
     <div class="card dc-cards">
@@ -18,7 +23,8 @@
         <div class="card-body d-flex justify-content-evenly">
           <a href="{{route('comics.show', $comic->id)}}" class="btn btn-secondary" title="See details"><i class="bi bi-eye-fill"></i></a>
           <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
-          <a href="#" class="btn btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+          @include('partials.form-delete', $comic)
+
         </div>
       </div>
     @empty

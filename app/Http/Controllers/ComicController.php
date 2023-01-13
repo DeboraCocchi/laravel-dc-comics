@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -35,11 +36,14 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         $form_data=$request->all();
         $new_comic= new Comic();
         $form_data['slug']=Str::slug($new_comic->title,'-',$new_comic->series);
+        if(!$form_data['thumb']){
+            $form_data['thumb']='https://static.posters.cz/image/1300/poster/dc-comics-rebirth-i80856.jpg';
+        }
         $new_comic->fill($form_data);
 
         // $new_comic->title=$form_data['title'];
@@ -87,7 +91,7 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
         $form_data=$request->all();
 
@@ -106,7 +110,9 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comic $comic)
+
     {
-        return redirect()->route('comics.index');
+        $comic->delete();
+        return redirect()->route('comics.index')->with('deleted', "L'elemento $comic->title è stato eliminato correttamente." );
     }
 }

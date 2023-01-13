@@ -22,8 +22,8 @@
             <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Insert a valid url" name="thumb">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Sale_date</label>
-            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Insert a valid date" name="sale_date">
+            <label for="exampleFormControlInput1" class="form-label">Sale date</label>
+            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Insert a valid date date in format YYYY-MM-DD" name="sale_date">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput4" class="form-label">Price</label>

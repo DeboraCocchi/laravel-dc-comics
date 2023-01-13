@@ -17,7 +17,7 @@
         </div>
         <div class="card-body d-flex justify-content-evenly">
           <a href="{{route('comics.show', $comic->id)}}" class="btn btn-secondary" title="See details"><i class="bi bi-eye-fill"></i></a>
-          <a href="#" class="btn btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+          <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
           <a href="#" class="btn btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
         </div>
       </div>

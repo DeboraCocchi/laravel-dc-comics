@@ -7,7 +7,7 @@
 @section('content')
 <section class="comics">
     <div class="main-container">
-        <img src="{{$comic->thumb}}" alt="{{$comic->title}}" class="thumb">
+        <img src="{{$comic->thumb}}" alt="{{$comic->title}}" class="thumb detail-img">
         <div class="container-fluid">
             <div class="row d-flex align-items-start mt-4">
                 <div class="col-8 col">
